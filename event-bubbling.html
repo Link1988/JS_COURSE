@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid blue;
+        }
+        form {
+            background-color: green;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        div {
+            background-color: blue;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
+        }
+
+        p {
+            background-color: red;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0;
+        }
+
+        body {
+            line-height: 25px;
+            font-size: 16px;
+        }
+    </style>
+    <!-- The process is called “bubbling”, because events “bubble” from the inner element up through parents like a bubble in the water. -->
+
+    <script>
+        // form.onclick = function(event) {
+        //     event.target.style.backgroundColor = 'yellow';
+
+        //     setTimeout(function () {
+        //         alert("target = " + event.target.tagName + ", this=" + this.tagName);
+        //         event.target.style.backgroundColor = ''
+        //     }, 0);
+        // };
+    </script>
+</head>
+<body>
+    <form onclick="alert('form')">FORM
+        <div onclick="alert('div')">DIV
+            <p onclick="alert('p')">P</p>
+        </div>
+    </form>
+
+    <!-- <form id="form">FORM
+        <div>DIV
+            <p>P</p>
+        </div>
+    </form> -->
+</body>
+</html>
